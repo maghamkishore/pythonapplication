@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning the code from GitHub'
 				sh'''
-				rm -rf pythonexp
+				rm -rf pythonapplication
 				git clone https://github.com/maghamkishore/pythonapplication.git
 				'''
             }
