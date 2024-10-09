@@ -18,7 +18,7 @@ pipeline {
 				sh'''
 				ls -lrt
 				cd pythonapplication
-				sudo docker build -t kish24/python:latest .
+				sudo docker build -t kish24/pythonapp:latest .
 				sudo docker images
 				
 				'''
@@ -31,8 +31,8 @@ pipeline {
                 sh '''
 				sudo docker container stop pythonapplication
 				sudo docker rm pythonapplication
-                sudo docker push maghamkishore/python:latest
-                sudo docker run -d -p 8085:3333 --name pythonapplication kish24/python:latest
+                sudo docker push maghamkishore/pythonapp:latest
+                sudo docker run -d -p 8085:3333 --name pythonapplication kish24/pythonapp:latest
                 sudo docker ps
                 '''
             }
