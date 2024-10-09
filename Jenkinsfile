@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Building the Docker Image'
 				sh'''
-				
+				ls -lrt
 				cd pythonapplication
 				sudo docker build -t maghamkishore/python:latest .
 				sudo docker images
@@ -30,7 +30,7 @@ pipeline {
                 echo 'docker run '
                 sh '''
                 sudo docker push maghamkishore/python:latest
-                sudo docker run -d -p 8087:3333 --name pythonapplication maghamkishore/python:latest
+                sudo docker run -d -p 8085:3333 --name pythonapplication maghamkishore/python:latest
                 sudo docker ps
                 '''
             }
