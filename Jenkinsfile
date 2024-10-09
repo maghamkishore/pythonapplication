@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning the code from GitHub'
 				sh'''
-				
+				ls -lrt
 				git clone https://github.com/maghamkishore/pythonapplication.git
 				'''
             }
@@ -17,7 +17,7 @@ pipeline {
                 echo 'Building the Docker Image'
 				sh'''
 				
-				cd pythonexp
+				cd pythonapplication
 				sudo docker build -t maghamkishore/python:latest .
 				sudo docker images
 				
