@@ -29,8 +29,6 @@ pipeline {
             steps {
                 echo 'docker run '
                 sh '''
-				sudo docker container stop pythonapplication
-				sudo docker rm pythonapplication
                 sudo docker push kish24/pythonapp:4.0
                 sudo docker run -d -p 8085:3333 --name pythonapplication kish24/pythonapp:4.0
                 sudo docker ps
